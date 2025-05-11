@@ -9,7 +9,7 @@ import draftToHtml from "draftjs-to-html"
 
 const NewBlogPost = props => {
 
-    const url = process.env.REACT_APP_URL
+    const url = "https://strive-blog-kappa-silk.vercel.app"
   const keyFetch = localStorage.getItem("token")
 
   const [coverFile, setCoverFile] = useState(null)
