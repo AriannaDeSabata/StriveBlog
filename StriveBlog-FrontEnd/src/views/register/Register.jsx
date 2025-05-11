@@ -29,7 +29,7 @@ export default function Register() {
                 return
               }
 
-              const res = await fetch(url + "authors/register", {
+              const res = await fetch(url + "/authors/register", {
                 method: 'POST',
                 body: JSON.stringify(userRegister),
                 headers: {

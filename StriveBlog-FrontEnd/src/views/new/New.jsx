@@ -9,7 +9,7 @@ import draftToHtml from "draftjs-to-html"
 
 const NewBlogPost = props => {
 
-  const url = "http://localhost:3001/blogPosts"
+    const url = process.env.REACT_APP_URL
   const keyFetch = localStorage.getItem("token")
 
   const [coverFile, setCoverFile] = useState(null)
@@ -48,7 +48,7 @@ const NewBlogPost = props => {
     const postBlogPost= async()=>{
       try {
 
-        const res = await fetch(url,{
+        const res = await fetch(url +"/blogPosts",{
           method:'POST',
           body: JSON.stringify(newPost),
           headers:{

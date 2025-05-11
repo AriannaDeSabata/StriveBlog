@@ -31,7 +31,7 @@ export default function Login() {
         return
       }
 
-      const res = await fetch(url + "authors/login", {
+      const res = await fetch(url + "/authors/login", {
         method:'POST',
         body: JSON.stringify(userLogin),
         headers: {
