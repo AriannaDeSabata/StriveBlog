@@ -7,7 +7,7 @@ const BlogList = ({searchValue}) => {
 
   const keyFetch = localStorage.getItem("token")
   const [listPost, setListPost] = useState([])
-  const url = "https://strive-blog-two.vercel.app/"
+  const url = "https://strive-blog-2oyphog36-ariannas-projects-9048cc9b.vercel.app/"
 
   useEffect(()=>{
 
