@@ -8,7 +8,7 @@ const googleStrategy = new GoogleStrategy({
 
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://strive-blog-two.vercel.app/auth/google/callback"
+    callbackURL: "https://striveblog-s75e.onrender.com/auth/google/callback"
 
   },async function(accessToken, refreshToken, profile, passportNext){
 
