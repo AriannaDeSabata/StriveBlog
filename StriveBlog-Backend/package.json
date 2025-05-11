@@ -1,5 +1,5 @@
 {
-  "name": "w1-d1-pratica",
+  "name": "StriveBlog-Backend",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
