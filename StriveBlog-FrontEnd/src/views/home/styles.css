@@ -1,0 +1,30 @@
+.container-sm {
+  padding-top: 110px !important;
+}
+
+.blog-main-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #00d66f;
+}
+
+.contButtonHome{
+  display: flex;
+  height: 60vh;
+  padding: 100px 0;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contButtonHome button{
+  border: none;
+  border-radius: 20px;
+  height: 50px;
+  width: 150px;
+}
+
+.btnLogin{
+  background-color: rgb(63, 255, 10);
+}
