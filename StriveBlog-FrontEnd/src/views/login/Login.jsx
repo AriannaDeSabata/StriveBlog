@@ -54,13 +54,7 @@ export default function Login() {
 
 
     } catch (error) {
-        if(error){
-        setShowAlertDeny(true)
-        setErrorMsg(error)
-        setTimeout(()=>{
-          setShowAlertDeny(false)
-        },5000)
-      }
+        console.log(error)
 
     }
   }
