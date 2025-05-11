@@ -6,7 +6,7 @@ import "./styles.css";
 
 export default function Login() {
 
-  const url = "https://strive-blog-kappa-silk.vercel.app"
+  const url = process.env.REACT_APP_URL
 
   const navigate = useNavigate()
   const [showAlertDeny, setShowAlertDeny] = useState(false)
