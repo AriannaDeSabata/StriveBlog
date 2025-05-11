@@ -109,7 +109,7 @@ export default function Login() {
           <Link to="/register" className="link my-3 ms-0">Non hai un'account? <span className='registerLink'>Registrati</span></Link>
         </Form.Group>
 
-          <a href='http://localhost:3001/auth/googleLogin' className='btnGoogle'>
+          <a href='https://striveblog-s75e.onrender.com/auth/googleLogin' className='btnGoogle'>
           <img src='https://techdocs.akamai.com/identity-cloud/img/social-login/identity-providers/iconfinder-new-google-favicon-682665.png' className='imgGoogleLogin'/>
           Login with Google </a>
 
