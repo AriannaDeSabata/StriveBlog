@@ -5,7 +5,7 @@ import './styles.css'
 
 export default function Register() {
 
-    const url = process.env.REACT_APP_URL
+    const url = "https://strive-blog-two.vercel.app/"
     const [showAlertDeny, setShowAlertDeny] = useState(false)
     const [errorMsg, setErrorMsg ] = useState("")
 

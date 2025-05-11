@@ -9,7 +9,7 @@ import draftToHtml from "draftjs-to-html"
 
 const NewBlogPost = props => {
 
-  const url = "http://localhost:3001/blogPosts"
+  const url = "https://strive-blog-two.vercel.app/blogPosts"
   const keyFetch = localStorage.getItem("token")
 
   const [coverFile, setCoverFile] = useState(null)

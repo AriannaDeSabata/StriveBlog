@@ -6,7 +6,7 @@ import "./styles.css";
 
 export default function Login() {
 
-  const url = process.env.REACT_APP_URL
+  const url = "https://strive-blog-two.vercel.app/"
 
   const navigate = useNavigate()
   const [showAlertDeny, setShowAlertDeny] = useState(false)
