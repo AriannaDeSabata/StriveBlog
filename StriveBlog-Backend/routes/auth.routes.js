@@ -8,7 +8,7 @@ route.get('/googleLogin', passport.authenticate('google', {scope: ['profile', 'e
 
 route.get('/google/callback', passport.authenticate('google', {session: false,failureRedirect:'/login'}), async(req , res , next)=>{
     try {
-        res.redirect('https://striveblog-s75e.onrender.com/home')
+        res.redirect('/home')
     } catch (err) {
         next(err)
     }
