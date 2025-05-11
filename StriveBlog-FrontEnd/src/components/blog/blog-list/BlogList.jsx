@@ -7,13 +7,13 @@ const BlogList = ({searchValue}) => {
 
   const keyFetch = localStorage.getItem("token")
   const [listPost, setListPost] = useState([])
-  const url = "https://strive-blog-kappa-silk.vercel.app"
+  const url = process.env.REACT_APP_URL
 
   useEffect(()=>{
 
     const getAllPost = async ()=>{
       try {
-        const res = await fetch(url + "/blogPosts"  +`/?q=${searchValue}`, {
+        const res = await fetch(url + "blogPosts"  +`/?q=${searchValue}`, {
           headers:{
             Authorization: keyFetch
           }

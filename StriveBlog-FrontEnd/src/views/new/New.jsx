@@ -9,7 +9,7 @@ import draftToHtml from "draftjs-to-html"
 
 const NewBlogPost = props => {
 
-    const url = "https://strive-blog-kappa-silk.vercel.app"
+  const url = "http://localhost:3001/blogPosts"
   const keyFetch = localStorage.getItem("token")
 
   const [coverFile, setCoverFile] = useState(null)
@@ -48,12 +48,12 @@ const NewBlogPost = props => {
     const postBlogPost= async()=>{
       try {
 
-        const res = await fetch(url +"/blogPosts",{
+        const res = await fetch(url,{
           method:'POST',
           body: JSON.stringify(newPost),
           headers:{
             "Content-Type" : 'application/json',
-            Authorization: `Bearer ${keyFetch}`
+            Authorization: keyFetch
           }
         })
 

@@ -5,7 +5,7 @@ import './styles.css'
 
 export default function Register() {
 
-    const url = "https://strive-blog-kappa-silk.vercel.app"
+    const url = process.env.REACT_APP_URL
     const [showAlertDeny, setShowAlertDeny] = useState(false)
     const [errorMsg, setErrorMsg ] = useState("")
 
@@ -29,7 +29,7 @@ export default function Register() {
                 return
               }
 
-              const res = await fetch(url + "/authors/register", {
+              const res = await fetch(url + "authors/register", {
                 method: 'POST',
                 body: JSON.stringify(userRegister),
                 headers: {
