@@ -53,7 +53,7 @@ const NewBlogPost = props => {
           body: JSON.stringify(newPost),
           headers:{
             "Content-Type" : 'application/json',
-            Authorization: keyFetch
+            Authorization: `Bearer ${keyFetch}`
           }
         })
 

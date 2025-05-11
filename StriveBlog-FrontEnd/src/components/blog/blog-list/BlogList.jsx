@@ -13,9 +13,10 @@ const BlogList = ({searchValue}) => {
 
     const getAllPost = async ()=>{
       try {
-        const res = await fetch(url + "/blogPosts"  +`/?q=${searchValue}`, {
+        const query = searchValue ? `?q=${encodeURIComponent(searchValue)}` : "";
+        const res = await fetch(`${url}/blogPosts${query}`, {
           headers:{
-            Authorization: keyFetch
+            Authorization: `Bearer ${keyFetch}`
           }
         })
 

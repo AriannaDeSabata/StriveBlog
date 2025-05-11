@@ -13,7 +13,7 @@ import authRoutes from './routes/auth.routes.js'
 const app = express()
 
 app.use(express.json())
-app.use(cors({origin:'*'}))
+app.use(cors({origin:'https://strive-blog-ctfpt1cee-ariannas-projects-9048cc9b.vercel.app'}))
 app.use('/authors', authorRoutes)
 app.use('/blogPosts', blogPostRoutes)
 app.use('/auth', authRoutes)
