@@ -13,8 +13,7 @@ const BlogList = ({searchValue}) => {
 
     const getAllPost = async ()=>{
       try {
-        const query = searchValue ? `?q=${encodeURIComponent(searchValue)}` : "";
-        const res = await fetch(`${url}/blogPosts${query}`, {
+        const res = await fetch(url + "/blogPosts"  +`/?q=${searchValue}`, {
           headers:{
             Authorization: keyFetch
           }

@@ -9,7 +9,7 @@ const route = express.Router()
  
 //BlogPosts GET recupero dei blogPost tramite query, se assente recupera tutti i blogPost
 
-route.get('/', authMiddleware ,async (req, res ,next)=>{
+route.get('/', async (req, res ,next)=>{
     try {
         const querySearch = req.query.q 
         const page = parseInt(req.query.page) || 1
