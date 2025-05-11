@@ -6,7 +6,7 @@ import "./styles.css";
 
 export default function Login() {
 
-  const url = "https://strive-blog-two.vercel.app/"
+  const url = "https://strive-blog-2oyphog36-ariannas-projects-9048cc9b.vercel.app/"
 
   const navigate = useNavigate()
   const [showAlertDeny, setShowAlertDeny] = useState(false)
