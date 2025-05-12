@@ -5,7 +5,7 @@ import BlogItem from "../blog-item/BlogItem";
 
 const BlogList = ({searchValue}) => {
 
-  const keyFetch = localStorage.getItem("token")
+  const token = localStorage.getItem("token")
   const [listPost, setListPost] = useState([])
   const url = "https://striveblog-s75e.onrender.com/"
 

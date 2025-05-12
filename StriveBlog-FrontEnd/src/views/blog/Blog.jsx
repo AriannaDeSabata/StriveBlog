@@ -11,8 +11,10 @@ const Blog = props => {
   const [loading, setLoading] = useState(true);
   const params = useParams();
   const navigate = useNavigate();
+
   useEffect(() => {
     const { id } = params;
+    console.log(params)
     const blog = posts.find(post => post._id.toString() === id);
 
     if (blog) {

@@ -31,6 +31,13 @@ const Home = ({searchValue}) => {
         </div>
  
       )}
+      {isToken && (
+        <div className="text-center contTextHome">
+        <p>Benvenuto su Strive Blog - la tua nuova piattaforma per leggere articoli scritti da sviluppatori, studenti e appassionati di tecnologia!</p>
+        </div>
+
+
+      )}
       <BlogList searchValue={searchValue}/>
     </Container>
   );

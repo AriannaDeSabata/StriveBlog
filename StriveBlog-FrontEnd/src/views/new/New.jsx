@@ -95,12 +95,7 @@ const NewBlogPost = props => {
             setShowAlertSuccess(false)
         },5000)
 
-        setNewPost({
-          category: "",
-          title: "",
-          cover: "",
-          content: ""
-        })
+
       }
 
 
@@ -118,6 +113,12 @@ const NewBlogPost = props => {
   const handleSubmit = (e)=>{
     e.preventDefault()
     postBlogPost()
+            setNewPost({
+          category: "",
+          title: "",
+          cover: "",
+          content: ""
+        })
 
   }
 
@@ -138,15 +139,15 @@ const NewBlogPost = props => {
       <Form className="mt-2">
         <Form.Group controlId="blog-form" className="mt-3">
           <Form.Label>Titolo</Form.Label>
-          <Form.Control size="lg" placeholder="Title" name="title" onChange={handleChangeForm}/>
+          <Form.Control size="lg" placeholder="Title" name="title" value={newPost.title} onChange={handleChangeForm}/>
         </Form.Group>
 
         <Form.Group controlId="blog-form" className="mt-3">
           <Form.Label>Cover</Form.Label>
-          <Form.Control size="lg" placeholder="Title" type="file" accept="image/" name="file" onChange={handleFile}/>
+          <Form.Control size="lg" placeholder="Title" type="file" accept="image/" name="file" value={newPost.cover} onChange={handleFile}/>
         </Form.Group>
 
-        <Form.Group controlId="blog-category" className="mt-3" onChange={handleChangeForm}>
+        <Form.Group controlId="blog-category" className="mt-3"value={newPost.category} onChange={handleChangeForm}>
           <Form.Label>Categoria</Form.Label>
           <Form.Control size="lg" as="select" name="category">
             <option>Categoria 1</option>

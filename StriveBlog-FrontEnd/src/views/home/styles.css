@@ -28,3 +28,8 @@
 .btnLogin{
   background-color: rgb(63, 255, 10);
 }
+
+.contTextHome{
+  padding: 50px;
+  font-size: 2em;
+}
