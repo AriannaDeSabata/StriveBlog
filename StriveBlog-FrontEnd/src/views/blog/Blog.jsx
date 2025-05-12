@@ -1,5 +1,6 @@
+
 import React, { useEffect, useState } from "react";
-import { Container, Image } from "react-bootstrap";
+import { Container, Image, Spinner } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import BlogAuthor from "../../components/blog/blog-author/BlogAuthor";
 import BlogLike from "../../components/likes/BlogLike";
@@ -9,24 +10,50 @@ import "./styles.css";
 const Blog = props => {
   const [blog, setBlog] = useState({});
   const [loading, setLoading] = useState(true);
+  const token = localStorage.getItem("token")
   const params = useParams();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const { id } = params;
-    console.log(params)
-    const blog = posts.find(post => post._id.toString() === id);
+    const {id} = params
 
-    if (blog) {
-      setBlog(blog);
-      setLoading(false);
-    } else {
-      navigate("/404");
+
+  useEffect(() => {
+    const url = "https://striveblog-s75e.onrender.com/blogPosts/"
+
+    const getBlog = async()=>{
+      try {
+        const res = await fetch(`${url}${id}`, {
+          headers: {
+            Authorization: token
+          }
+        })
+
+      if (res.ok) {
+        const json = await res.json()
+        setBlog(json)
+
+        setLoading(false);
+
+      } else {
+        navigate("/404");
+      }
+
+
+      } catch (error) {
+        console.log(error)
+      }
+
     }
-  }, []);
+    getBlog()
+
+  }, [params]);
 
   if (loading) {
-    return <div>loading</div>;
+    return <div className="d-flex justify-content-center">
+            <Spinner animation="border" role="status" size="md">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
   } else {
     return (
       <div className="blog-details-root">
@@ -38,9 +65,10 @@ const Blog = props => {
             <div className="blog-details-author">
               <BlogAuthor {...blog.author} />
             </div>
+            
             <div className="blog-details-info">
-              <div>{blog.createdAt}</div>
-              <div>{`lettura da ${blog.readTime.value} ${blog.readTime.unit}`}</div>
+{              /*<div>{blog.createdAt}</div>
+              <div>{`lettura da ${blog.readTime.value} ${blog.readTime.unit}`}</div>*/}
               <div
                 style={{
                   marginTop: 20,

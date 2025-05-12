@@ -64,6 +64,7 @@ route.get('/:id', authMiddleware , async (req ,res ,next)=>{
     try {
         const blogPost = await blogPostModel.findById(id)
         res.status(200).json(blogPost)
+        
     } catch (err) {
         next(err)
     }

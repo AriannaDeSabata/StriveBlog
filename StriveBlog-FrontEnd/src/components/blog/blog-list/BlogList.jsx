@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Spinner } from "react-bootstrap";
 import BlogItem from "../blog-item/BlogItem";
 
 
 const BlogList = ({searchValue}) => {
 
+  const [loading, setLoading] = useState(true);
   const token = localStorage.getItem("token")
   const [listPost, setListPost] = useState([])
   const url = "https://striveblog-s75e.onrender.com/"
@@ -18,6 +19,7 @@ const BlogList = ({searchValue}) => {
         if(res.ok){
           const json = await res.json()
           setListPost(json)
+          setLoading(false)
         }
       } catch (error) {
         console.log(error)
@@ -27,6 +29,14 @@ const BlogList = ({searchValue}) => {
     getAllPost()
   },[searchValue])
 
+  if(loading){
+    
+    return <div className="d-flex justify-content-center">
+            <Spinner animation="border" role="status" size="md">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
+          </div>
+  }else{
   return (
     <Row>
       {listPost.map((post, i) => (
@@ -43,5 +53,5 @@ const BlogList = ({searchValue}) => {
     </Row>
   );
 };
-
+}
 export default BlogList;
